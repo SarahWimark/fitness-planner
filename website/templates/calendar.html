@@ -4,4 +4,15 @@
 {% endblock %}
 {% block content %}
 <h1>Calendar</h1>
+{% for day in june %}
+{% for i in range(6) %}
+  {% if day[i] != 0 %}
+  <div class="card" style="width: 10rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{day[i]}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+</div>
+  {% endif %}
+{% endfor %}
+{% endfor %}
 {% endblock %}
