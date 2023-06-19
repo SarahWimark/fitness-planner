@@ -1,5 +1,4 @@
 from flask import Flask
-import calendar
 
 
 def create_app():
