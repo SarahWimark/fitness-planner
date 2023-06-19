@@ -4,23 +4,49 @@ Calendar Page
 {% endblock %}
 {% block content %}
 <h1>Calendar</h1>
-
 <div class="container">
-  <div class="row ">
-
-    {% for day in june %}
-    {% for i in range(7) %}
-    {% if day[i] != 0 %}
+  <!-- Weekday header -->
+  <div class="row">
     <div class="col">
-      <ul>
-        <li>{{day[i]}}</li>
-      </ul>
+      <div class="text-center" style="width: 10rem; height: 3rem;">Mon</div>
     </div>
-    {% endif %}
-    {% endfor %}
+    <div class="col">
+      <div class="text-center" style="width: 10rem; height: 3rem;">Tue</div>
+    </div>
+    <div class="col">
+      <div class="text-center" style="width: 10rem; height: 3rem;">Wed</div>
+    </div>
+    <div class="col">
+      <div class=" text-center" style="width: 10rem; height: 3rem;">Thu</div>
+    </div>
+    <div class="col">
+      <div class="text-center" style="width: 10rem; height: 3rem;">Fri</div>
+    </div>
+    <div class="col">
+      <div class="text-center" style="width: 10rem; height: 3rem;">Sat</div>
+    </div>
+    <div class="col">
+      <div class="text-center" style="width: 10rem; height: 3rem;">Sun</div>
+    </div>
+  </div>
+  <!-- Days of the month -->
+  <div class="container">
+    {% for week in days %}
+    <div class="row">
+      {% for day in week %}
+      <div class="col">
+        {% if day %}
+        <a href="#" class="text-decoration-none">
+          <div class="card mb-2 p-2" style="width: 10rem; height: 8rem;">{{ day }}</div>
+        </a>
+        {% else %}
+        <div class="card mb-2 p-2" style="width: 10rem; height: 8rem;"></div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
     {% endfor %}
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
 
 

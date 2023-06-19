@@ -11,7 +11,5 @@ def home():
 
 @views.route('/calendar')
 def calendar():
-    june = monthcalendar(2023, 6)
-    #print(calendar)
-    print(june[2][2])
-    return render_template('calendar.html', june=june)
+    days = monthcalendar(2023, 6)
+    return render_template('calendar.html', days=days)
