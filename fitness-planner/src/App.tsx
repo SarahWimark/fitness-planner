@@ -1,8 +1,11 @@
+import Calendar from "./components/calendar/Calendar";
+
 const App = () => {
   return (
     <>
-      <div>CALENDAR</div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div>
+        <Calendar />
+      </div>
     </>
   );
 };
