@@ -2,13 +2,16 @@ import clsx from "clsx";
 
 interface Props extends React.PropsWithChildren {
   className?: string;
+  onClick?: () => void;
 }
 
-const Cell: React.FC<Props> = ({ className, children }) => {
+const Cell: React.FC<Props> = ({ onClick, className, children }) => {
   return (
     <div
+      onClick={onClick}
       className={clsx(
         "h-12 flex items-center justify-center border",
+        { "cursor-pointer hover:bg-gray-100 active:bg-gray-200": !!onClick },
         className
       )}
     >
