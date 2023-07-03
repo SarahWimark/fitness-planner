@@ -60,10 +60,15 @@ const Calendar: React.FC<Props> = ({ currentDate = new Date(), onChange }) => {
 
         {Array.from({ length: numDaysInMonth }).map((_, index) => {
           const day = index + 1;
+          const isTodaysDate = day === currentDate.getDate();
 
           return (
-            <Cell onClick={() => handleClickDate(day)} key={day}>
-              {day}
+            <Cell
+              isTodaysDate={isTodaysDate}
+              onClick={() => handleClickDate(day)}
+              key={day}
+            >
+              <div>{day}</div>
             </Cell>
           );
         })}
