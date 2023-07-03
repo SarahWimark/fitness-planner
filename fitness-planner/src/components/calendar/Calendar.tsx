@@ -3,6 +3,7 @@ import {
   differenceInDays,
   endOfMonth,
   format,
+  setDate,
   startOfMonth,
   sub,
 } from "date-fns";
@@ -34,6 +35,11 @@ const Calendar: React.FC<Props> = ({ currentDate = new Date(), onChange }) => {
   const getNextYear = () =>
     onChange && onChange(add(currentDate, { years: 1 }));
 
+  const handleClickDate = (index: number) => {
+    const date = setDate(currentDate, index);
+    onChange && onChange(date);
+  };
+
   return (
     <div className="w-[400px] h-16 ">
       <div className="grid grid-cols-7 items-center justify-center text-center">
@@ -55,7 +61,11 @@ const Calendar: React.FC<Props> = ({ currentDate = new Date(), onChange }) => {
         {Array.from({ length: numDaysInMonth }).map((_, index) => {
           const day = index + 1;
 
-          return <Cell key={day}>{day}</Cell>;
+          return (
+            <Cell onClick={() => handleClickDate(day)} key={day}>
+              {day}
+            </Cell>
+          );
         })}
 
         {Array.from({ length: suffixDays }).map((_, index) => (
