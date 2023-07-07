@@ -1,18 +1,19 @@
 import { useState } from "react";
 import Calendar from "./components/calendar/Calendar";
 import Activities from "./components/activity/Activities";
+import Navbar from "./components/layout/navbar/Navbar";
 
 const App = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   return (
     <>
-      <div className="container mx-auto flex flex-row">
-        <div className="mt-16 items-center">
+      <Navbar />
+      <div className="container mx-auto m-4">
+        <div className="flex md:flex-col-2 items-center">
           <Calendar currentDate={currentDate} onChange={setCurrentDate} />
+          <Activities />
         </div>
-
-        <Activities />
       </div>
     </>
   );
