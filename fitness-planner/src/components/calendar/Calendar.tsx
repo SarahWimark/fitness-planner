@@ -41,7 +41,7 @@ const Calendar: React.FC<Props> = ({ currentDate = new Date(), onChange }) => {
   };
 
   return (
-    <div className="w-[400px] h-16 mr-10">
+    <div className="w-[600px] sm:w-[400px] md:w-1/2 h-auto mr-10">
       <div className="grid grid-cols-7 items-center justify-center text-center">
         <Cell onClick={getPreviousYear}>{"<<"}</Cell>
         <Cell onClick={getPreviousMonth}>{"<"}</Cell>

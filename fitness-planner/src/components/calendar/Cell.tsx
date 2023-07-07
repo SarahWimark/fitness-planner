@@ -16,7 +16,7 @@ const Cell: React.FC<Props> = ({
     <div
       onClick={onClick}
       className={clsx(
-        "h-12 flex items-center justify-center border",
+        "h-12 md:h-16 flex items-center justify-center border",
         {
           "bg-blue-600 hover:bg-blue-500 text-white": isTodaysDate,
         },

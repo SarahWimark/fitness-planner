@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Navbar />
       <div className="container mx-auto m-4">
-        <div className="flex md:flex-col-2 items-center">
+        <div className="flex flex-col md:flex-row gap-2">
           <Calendar currentDate={currentDate} onChange={setCurrentDate} />
           <Activities />
         </div>
